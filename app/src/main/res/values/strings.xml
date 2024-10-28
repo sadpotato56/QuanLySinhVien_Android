@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ManagerStudent</string>
+    <string-array name="hdt">
+        <item>Đại Học</item>
+        <item>Cao Đẳng</item>
+        <item>Trung Cấp</item>
+    </string-array>
+</resources>

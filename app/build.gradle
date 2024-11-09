@@ -1,0 +1,53 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion 33  // Cập nhật lên API 33 cho Android 13
+    defaultConfig {
+        applicationId "com.example.qlsinhvien"
+        minSdkVersion 23
+        targetSdkVersion 33  // Mục tiêu Android 13
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        // Nâng cấp lên Java 11 để tận dụng các tính năng mới của Android Studio và Gradle
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    // Nếu muốn hỗ trợ tính năng biên dịch Kotlin mới nhất
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+
+    // Tính năng phân phối tài nguyên
+    buildFeatures {
+        viewBinding true  // Bật ViewBinding nếu muốn
+    }
+}
+
+dependencies {
+    // Cập nhật dependencies mới nhất để đảm bảo tính ổn định và hiệu suất
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.test:core:1.6.1'
+
+    // Thư viện kiểm thử mới nhất
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}
+
